@@ -8,17 +8,22 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+// import request from "@/utils/request";
+// import { onMounted } from "vue";
+
+
+</script>
 
 <style lang="scss" scoped>
 .container {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   .content {
     margin-top: 70px;
     width: 1200px;
-    height: 700px;
+    min-height: 700px;
   }
 }
 </style>
