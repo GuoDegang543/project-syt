@@ -35,7 +35,10 @@ const fetchData = async (keyword: string, cb: any) => {
 };
 
 const goDetail = (item: any) => {
-  $router.push({ path: "/hospital" });
+  $router.push({
+    path: "/hospital/register",
+    query: { hoscode: item.hoscode },
+  });
 };
 </script>
 
