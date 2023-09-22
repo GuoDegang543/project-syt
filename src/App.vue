@@ -5,13 +5,13 @@
       <router-view></router-view>
     </div>
     <HospitalBottom />
-    <Login />
+    <Login v-if="userStore.visiable" />
   </div>
 </template>
 
 <script setup lang="ts">
-// import request from "@/utils/request";
-// import { onMounted } from "vue";
+import useUserStore from "@/store/modules/user";
+let userStore = useUserStore();
 </script>
 
 <style lang="scss" scoped>

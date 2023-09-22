@@ -5,6 +5,7 @@ import { reqCode, reqUserLogin } from "@/api/hospital";
 import type { LoginData, UserLoginResponseData } from "@/api/hospital/type";
 import type { UserState } from "./interface";
 import { GET_TOKEN, SET_TOKEN, REMOVE_TOKEN } from "@/utils/user";
+
 const useUserStore = defineStore("User", {
   state: (): UserState => {
     return {
