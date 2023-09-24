@@ -25,4 +25,6 @@ app.use(ElementPlus, {
 });
 app.use(pinia);
 
+import "./permisstion";
+
 app.mount("#app");

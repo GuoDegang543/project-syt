@@ -93,6 +93,7 @@
 </template>
 
 <script setup lang="ts">
+import Visitor from "@/components/visitor/visitor.vue";
 import { User } from "@element-plus/icons-vue";
 //引入获取就诊人信息接口
 import { reqGetUser, reqDoctorInfo } from "@/api/hospital";
@@ -166,7 +167,10 @@ const submitOrder = async () => {
   );
   //提交订单成功
   if (result.code == 200) {
-    $router.push({ path: "/user/order", query: { orderId: result.data } });
+    $router.push({
+      path: "/user/order",
+      query: { orderId: result.data },
+    });
   } else {
     ElMessage({
       type: "error",

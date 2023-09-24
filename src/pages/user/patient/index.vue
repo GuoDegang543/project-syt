@@ -26,7 +26,10 @@
       <el-divider content-position="left">就诊人信息</el-divider>
       <el-form style="width: 60%; margin: 10px auto">
         <el-form-item label="用户姓名">
-          <el-input placeholder="请你输入用户姓名" v-model="userParams.name"></el-input>
+          <el-input
+            placeholder="请你输入用户姓名"
+            v-model="userParams.name"
+          ></el-input>
         </el-form-item>
         <el-form-item label="证件类型">
           <el-select
@@ -130,8 +133,12 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" size="default" @click="submit">提交</el-button>
-          <el-button type="primary" size="default" @click="reset">重写</el-button>
+          <el-button type="primary" size="default" @click="submit"
+            >提交</el-button
+          >
+          <el-button type="primary" size="default" @click="reset"
+            >重写</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -139,6 +146,7 @@
 </template>
 
 <script setup lang="ts">
+import Visitor from "@/components/visitor/visitor.vue";
 //@ts-ignore
 import type { CascaderProps } from "element-plus";
 import { User } from "@element-plus/icons-vue";
@@ -218,7 +226,7 @@ const changeScene = (user: AddOrUpdateUser) => {
 
 const reset = () => {
   Object.assign(userParams, {
-    id:null,
+    id: null,
     name: "",
     certificatesType: "",
     certificatesNo: "",
@@ -295,19 +303,19 @@ watch(
   () => userArr.value,
   () => {
     if ($route.query.type == "edit") {
-       let user  = userArr.value.find((item:any)=>{
-           return item.id==$route.query.id;
-       });
-      Object.assign(userParams,user)
+      let user = userArr.value.find((item: any) => {
+        return item.id == $route.query.id;
+      });
+      Object.assign(userParams, user);
     }
   }
 );
 
 //子组件自定义事件:删除按钮触发
-const removeUser = ()=>{
+const removeUser = () => {
   //再次获取全部的就诊人的信息
-   getAllUser();
-}
+  getAllUser();
+};
 </script>
 
 <style scoped lang="scss">
